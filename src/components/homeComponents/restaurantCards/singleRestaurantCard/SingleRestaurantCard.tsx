@@ -4,7 +4,7 @@ import Image from "next/image"
 const SingleRestaurantCard=()=>{
     return(
         <div className="">
-            <div className="flex flex-col gap-5  bg-secondary dark:bg-gray-950 rounded-md dark:shadow-lg shadow-xl dark:shadow-blue-950">
+            <div className="flex flex-col gap-5  bg-secondary dark:bg-gray-950 rounded-md dark:shadow-lg shadow-xl dark:shadow-black">
                 <div className="image w-full h-72 md:h-52 relative">
                     <Image className="rounded-lg" src="/resto1.png" alt="" fill/>
                 </div>
