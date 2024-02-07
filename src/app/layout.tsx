@@ -3,6 +3,7 @@ import Navbar from "@/components/helpComponents/navbar/Navbar";
 import { ThemeProvider } from "@/components/helpComponents/themeProvider/ThemeProvider";
 import StyledComponentsRegistry from "@/lib/registry";
 import { cn } from "@/lib/utils";
+import AuthProvider from "@/providers/AuthProvider";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -27,6 +28,7 @@ export default function RootLayout({
           inter.className
         )}
       >
+        <AuthProvider>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -48,6 +50,7 @@ export default function RootLayout({
             </div>
           </main>
         </ThemeProvider>
+        </AuthProvider>
       </body>
     </html>
   );

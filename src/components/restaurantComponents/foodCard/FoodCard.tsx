@@ -1,4 +1,4 @@
-import { Dot, IndianRupee, ThumbsUp } from "lucide-react";
+import { Dot, IndianRupee, Plus, ThumbsUp } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -38,14 +38,19 @@ const FoodCard = () => {
         </div>
       </div>
         <div className="flex flex-col gap-3">
+            <div className="flex gap-2 items-center">
       <div onClick={()=>setShowComment(!showComment)} className=" cursor-pointer">
             <div className="flex">
               <Dot />
-              <div className="">Comments</div>
+              <div className="flex items-center gap-2">Comments </div>
             </div>
           </div>
+         
+          </div>
+         
 
           {showComment&&<div className="ml-7 flex flex-col gap-3">
+          {showComment&&<div className="flex gap-3 items-center"><Plus size={15}/><div className="">Add a comment</div></div>}
             <div className="flex">
               <div className="flex items-center gap-4">
                 <div className="h-9 w-9 md:h-10 md:w-10 relative">

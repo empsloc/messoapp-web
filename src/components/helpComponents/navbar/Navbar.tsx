@@ -1,8 +1,12 @@
+"use client"
 import { Menu } from "lucide-react";
+import Link from "next/link";
+import { useState } from "react";
 import MaxWidthWrapper from "../MaxWidthWrapper/MaxWidthWrapper";
 import ThemeToggleButton from "../themeToggleButton/ThemeToggleButton";
 
 const Navbar = () => {
+  const  [openSideBar, setOpenSideBar] = useState(false)
   return (
     <MaxWidthWrapper className="">
       <div className="grid grid-cols-3">
@@ -13,12 +17,22 @@ const Navbar = () => {
           <div className="">Home</div>
           <div className="">All Mess</div>
           <div className="">About</div>
-          <div className="">Login</div>
+          <Link href="/auth" className="">Login</Link>
           </div>
-          <div className="md:hidden"><Menu/></div>
+          <div onClick={()=>setOpenSideBar(!openSideBar)} className="md:hidden"><Menu/></div>
+
         </div>
         
       </div>
+    {openSideBar&&<div className="flex justify-end"><div className="shadow-xl -mr-20 translate-x-0 absolute transition transform  duration-150 bg-white dark:bg-slate-950 w-96 h-full z-10">
+      <MaxWidthWrapper>
+    <div className="flex flex-col gap-7  items-end mr-10 mt-7">
+          <div className="">Home</div>
+          <div className="">All Mess</div>
+          <div className="">About</div>
+          <Link href="/auth" className="">Login</Link>
+          </div></MaxWidthWrapper></div></div>
+          }
     </MaxWidthWrapper>
   );
 };

@@ -1,6 +1,6 @@
 "use client";
 import MaxWidthWrapper from "@/components/helpComponents/MaxWidthWrapper/MaxWidthWrapper";
-import { Bike, Calendar, IndianRupee, Star, Timer } from "lucide-react";
+import { Bike, Calendar, IndianRupee, Plus, Star, Timer } from "lucide-react";
 
 import * as React from "react";
 
@@ -121,6 +121,8 @@ const RestaurantPage = () => {
           <FoodCard/>
           <FoodCard/>
           <FoodCard/>
+
+          <div className="h-20 w-20 flex rounded-full bg-secondary justify-center items-center mt-5"><Plus/></div>
         </div>
       </MaxWidthWrapper>
     </div>
