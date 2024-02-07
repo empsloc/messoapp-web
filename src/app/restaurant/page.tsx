@@ -21,7 +21,7 @@ const RestaurantPage = () => {
     <div className="mt-10">
       <MaxWidthWrapper>
         <div className="flex flex-col gap-5">
-          <div className="">
+          <div className=" flex flex-col gap-5">
             <div className="flex justify-between">
               <div className="flex flex-col gap-5 ">
                 <div className="text-2xl font-semibold">Name</div>
