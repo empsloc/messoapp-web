@@ -27,10 +27,10 @@ const Navbar = () => {
     {openSideBar&&<div className="flex justify-end"><div className="shadow-xl -mr-20 translate-x-0 absolute transition transform  duration-150 bg-white dark:bg-slate-950 w-96 h-full z-10">
       <MaxWidthWrapper>
     <div className="flex flex-col gap-7  items-end mr-10 mt-7">
-          <div className="">Home</div>
-          <div className="">All Mess</div>
-          <div className="">About</div>
-          <Link href="/auth" className="">Login</Link>
+          <div onClick={()=>setOpenSideBar(false)} className="">Home</div>
+          <div onClick={()=>setOpenSideBar(false)} className="">All Mess</div>
+          <div onClick={()=>setOpenSideBar(false)} className="">About</div>
+          <Link onClick={()=>setOpenSideBar(false)} href="/auth" className="">Login</Link>
           </div></MaxWidthWrapper></div></div>
           }
     </MaxWidthWrapper>
