@@ -1,6 +1,7 @@
 import Footer from "@/components/helpComponents/footer/Footer";
 import Navbar from "@/components/helpComponents/navbar/Navbar";
 import { ThemeProvider } from "@/components/helpComponents/themeProvider/ThemeProvider";
+import StyledComponentsRegistry from "@/lib/registry";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -20,19 +21,34 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en h-full">
- <body className={cn("relative h-full font-sans antialiased  ", inter.className)}>
-  <ThemeProvider   attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange>
+      <body
+        className={cn(
+          "relative h-full font-sans antialiased  ",
+          inter.className
+        )}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <main className="relative flex flex-col min-h-screen ">
+            <div className="mt-7">
+              <Navbar />
+            </div>
+            <div className="flex-grow flex-1">
               
-        <main className="relative flex flex-col min-h-screen ">
-        <div className="mt-7"><Navbar/></div>
-        <div className="flex-grow flex-1" >{children} </div>
-        <div className="mt-7"><Footer/></div>
-        </main>
+              <StyledComponentsRegistry>
+                {children}
+              </StyledComponentsRegistry>
+            </div>
+            <div className="mt-7">
+              <Footer />
+            </div>
+          </main>
         </ThemeProvider>
-        </body>
+      </body>
     </html>
   );
 }
